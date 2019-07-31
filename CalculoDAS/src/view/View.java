@@ -175,6 +175,7 @@ public  class View extends javax.swing.JFrame {
                 } else if (rb12 < 4800000){
                 valor3 = valor2;
                 aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ICMS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ICMS na repartição de tributos é zerada");
                 } else {
                 JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional");
                 }
@@ -198,6 +199,7 @@ public  class View extends javax.swing.JFrame {
                 } else if (rb12 < 4800000){
                 valor3 = valor2;
                 aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ICMS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ICMS na repartição de tributos é zerada");
                 }
            } else if (anexo == 3){
             if (rb12 < 180000){
@@ -218,6 +220,7 @@ public  class View extends javax.swing.JFrame {
                 } else if (rb12 < 4800000){
                 valor3 = valor2;
                 aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ISS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ISS na repartição de tributos é zerada");
                 } else {
                 JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional");
                 }
@@ -241,6 +244,7 @@ public  class View extends javax.swing.JFrame {
                 } else if (rb12 < 4800000){
                 valor3 = valor2;
                 aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ISS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ISS na repartição de tributos é zerada");
                 }
 
         } else if (anexo == 5){
@@ -262,6 +266,7 @@ public  class View extends javax.swing.JFrame {
                 } else if (rb12 < 4800000){
                 valor3 = valor2;
                 aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ISS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ISS na repartição de tributos é zerada");
                 }
        }
       return valor3;
@@ -470,7 +475,7 @@ public  class View extends javax.swing.JFrame {
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
                         .addGap(0, 55, Short.MAX_VALUE)
                         .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -649,7 +654,7 @@ public  class View extends javax.swing.JFrame {
             }
         });
 
-        lbl4.setText("Alíquota do ISS");
+        lbl4.setText("Alíquota do ICMS:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -682,7 +687,7 @@ public  class View extends javax.swing.JFrame {
                                         .addComponent(txt4, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txt5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))))
                             .addComponent(btnreceitas, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn1)
