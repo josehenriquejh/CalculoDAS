@@ -18,6 +18,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <Events>
     <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosing"/>
@@ -236,12 +237,14 @@
     <Component class="javax.swing.JComboBox" name="cb1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="7">
             <StringItem index="0" value="Anexo I"/>
             <StringItem index="1" value="Anexo II"/>
             <StringItem index="2" value="Anexo III"/>
             <StringItem index="3" value="Anexo IV"/>
             <StringItem index="4" value="Anexo V"/>
+            <StringItem index="5" value="Transporte"/>
+            <StringItem index="6" value="Comunica&#xe7;&#xe3;o"/>
           </StringArray>
         </Property>
         <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
@@ -255,12 +258,14 @@
     <Component class="javax.swing.JComboBox" name="cb2">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="7">
             <StringItem index="0" value="Anexo I"/>
             <StringItem index="1" value="Anexo II"/>
             <StringItem index="2" value="Anexo III"/>
             <StringItem index="3" value="Anexo IV"/>
             <StringItem index="4" value="Anexo V"/>
+            <StringItem index="5" value="Transporte"/>
+            <StringItem index="6" value="Comunica&#xe7;&#xe3;o"/>
           </StringArray>
         </Property>
         <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">

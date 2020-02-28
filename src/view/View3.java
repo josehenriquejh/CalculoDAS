@@ -155,7 +155,7 @@ public class View3 extends javax.swing.JFrame {
             }
         });
 
-        cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Anexo I", "Anexo II", "Anexo III", "Anexo IV", "Anexo V" }));
+        cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Anexo I", "Anexo II", "Anexo III", "Anexo IV", "Anexo V", "Transporte", "Comunicação" }));
         cb1.setNextFocusableComponent(txt1);
         cb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +163,7 @@ public class View3 extends javax.swing.JFrame {
             }
         });
 
-        cb2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Anexo I", "Anexo II", "Anexo III", "Anexo IV", "Anexo V" }));
+        cb2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Anexo I", "Anexo II", "Anexo III", "Anexo IV", "Anexo V", "Transporte", "Comunicação" }));
         cb2.setNextFocusableComponent(txt5);
         cb2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,7 +383,7 @@ public class View3 extends javax.swing.JFrame {
         ret2 = (((View.calculaRet(100))/100));
         aliqret2 = View.aliqret;
         txt10.setText(String.valueOf(View.format(View.rb12)));
-        
+        /*
        if (View.anexo <= 2){
         jLabel7.setText("Venda Sem Substituição:");
         jLabel8.setText("Venda Com Substituição:");
@@ -394,9 +394,32 @@ public class View3 extends javax.swing.JFrame {
         jLabel7.setText("Sem Retenção de ISS:");
         jLabel8.setText("Com Retenção de ISS:");
         jLabel11.setText("Valor do ISS Retido:");
-        jLabel14.setText("Alíquota do ISS:");}
+        jLabel14.setText("Alíquota do ISS:");}*/
         
-        
+        if (anexo <= 2){
+        jLabel7.setText("Venda Sem Substituição:");
+        jLabel8.setText("Venda Com Substituição:");
+        jLabel11.setText("Valor do ICMS Retido:");
+        jLabel14.setText("Alíquota do ICMS:");
+        }
+        if (anexo == 3 || anexo == 4 || anexo == 5) {
+        jLabel7.setText("Sem retenção de ISS:");
+        jLabel8.setText("Com retenção de ISS:");
+        jLabel11.setText("Valor do ISS Retido:");
+        jLabel14.setText("Alíquota do ISS");
+        } 
+        if (anexo == 6){
+        jLabel7.setText("Sem retenção de ISS:");    
+        jLabel8.setText("Com retenção de ISS:");    
+        jLabel11.setText("Valor do ISS Retido:");    
+        jLabel14.setText("Alíquota do ISS:");  
+        }
+        if (anexo == 7){
+        jLabel7.setText("Sem retenção de ICMS:");
+        jLabel8.setText("Com retenção de ICMS:");
+        jLabel11.setText("Valor do ICMS Retido:");
+        jLabel14.setText("Alíquota do ICMS:");
+        }
     }//GEN-LAST:event_cb2ActionPerformed
 
     private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
@@ -408,7 +431,7 @@ public class View3 extends javax.swing.JFrame {
         aliqret1 = View.aliqret;
         txt10.setText(String.valueOf(View.format(View.rb12)));
         
-        
+        /*
         if (View.anexo <= 2){
         jLabel3.setText("Venda Sem Substituição:");
         jLabel5.setText("Venda Com Substituição:");
@@ -419,7 +442,32 @@ public class View3 extends javax.swing.JFrame {
         jLabel3.setText("Sem Retenção de ISS:");
         jLabel5.setText("Com Retenção de ISS:");
         jLabel10.setText("Valor do ISS Retido:");
-        jLabel13.setText("Alíquota do ISS:");}
+        jLabel13.setText("Alíquota do ISS:");}*/
+        
+        if (anexo <= 2){
+        jLabel7.setText("Venda Sem Substituição:");
+        jLabel8.setText("Venda Com Substituição:");
+        jLabel11.setText("Valor do ICMS Retido:");
+        jLabel14.setText("Alíquota do ICMS:");
+        }
+        if (anexo == 3 || anexo == 4 || anexo == 5) {
+        jLabel7.setText("Sem retenção de ISS:");
+        jLabel8.setText("Com retenção de ISS:");
+        jLabel11.setText("Valor do ISS Retido:");
+        jLabel14.setText("Alíquota do ISS");
+        } 
+        if (anexo == 6){
+        jLabel7.setText("Sem retenção de ISS:");    
+        jLabel8.setText("Com retenção de ISS:");    
+        jLabel11.setText("Valor do ISS Retido:");    
+        jLabel14.setText("Alíquota do ISS:");  
+        }
+        if (anexo == 7){
+        jLabel7.setText("Sem retenção de ICMS:");
+        jLabel8.setText("Com retenção de ICMS:");
+        jLabel11.setText("Valor do ICMS Retido:");
+        jLabel14.setText("Alíquota do ICMS:");
+        }
     }//GEN-LAST:event_cb1ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
