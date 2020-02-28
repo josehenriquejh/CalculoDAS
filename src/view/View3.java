@@ -383,18 +383,7 @@ public class View3 extends javax.swing.JFrame {
         ret2 = (((View.calculaRet(100))/100));
         aliqret2 = View.aliqret;
         txt10.setText(String.valueOf(View.format(View.rb12)));
-        /*
-       if (View.anexo <= 2){
-        jLabel7.setText("Venda Sem Substituição:");
-        jLabel8.setText("Venda Com Substituição:");
-        jLabel11.setText("Valor do ICMS Retido:");
-        jLabel14.setText("Alíquota do ICMS:");
-        }
-        if (View.anexo >= 3) {
-        jLabel7.setText("Sem Retenção de ISS:");
-        jLabel8.setText("Com Retenção de ISS:");
-        jLabel11.setText("Valor do ISS Retido:");
-        jLabel14.setText("Alíquota do ISS:");}*/
+        
         
         if (anexo <= 2){
         jLabel7.setText("Venda Sem Substituição:");
@@ -431,19 +420,7 @@ public class View3 extends javax.swing.JFrame {
         aliqret1 = View.aliqret;
         txt10.setText(String.valueOf(View.format(View.rb12)));
         
-        /*
-        if (View.anexo <= 2){
-        jLabel3.setText("Venda Sem Substituição:");
-        jLabel5.setText("Venda Com Substituição:");
-        jLabel10.setText("Valor do ICMS Retido:");
-        jLabel13.setText("Alíquota do ICMS:");
-        }
-        if (View.anexo >= 3) {
-        jLabel3.setText("Sem Retenção de ISS:");
-        jLabel5.setText("Com Retenção de ISS:");
-        jLabel10.setText("Valor do ISS Retido:");
-        jLabel13.setText("Alíquota do ISS:");}*/
-        
+      
         if (anexo <= 2){
         jLabel7.setText("Venda Sem Substituição:");
         jLabel8.setText("Venda Com Substituição:");
