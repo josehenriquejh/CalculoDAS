@@ -14,6 +14,7 @@ public  class View extends javax.swing.JFrame {
 
 
     double aliquota = 0;
+    double aliquota1 = 0;
     double valor1 = 0;
     double valor2 = 0;
     double imposto = 0;
@@ -69,7 +70,7 @@ public  class View extends javax.swing.JFrame {
 
 
 
-    public Double calculaAliquota(double rb12){
+     public Double calculaAliquota(double rb12){
     if (anexo == 1){
                 if (rb12 < 180000){
                 aliquota = 0.04;
@@ -151,8 +152,68 @@ public  class View extends javax.swing.JFrame {
                 } else {
                 JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional /n Digite ''.'' caso precise tratar valores decimais");
                 }
-       }
-    return aliquota;
+       } else if (anexo == 6){
+        if (rb12 < 180000){
+                aliquota = 0.0535;
+                aliquota1 = 0.04 * 0.34;
+                } else if (rb12 < 360000){
+                aliquota = ((rb12 * 0.112) - 9360)/rb12;
+                aliquota1 = ((rb12 * 0.073) - 5940)/rb12;
+                aliquota1 = aliquota1 * 0.34;
+                aliquota = aliquota - (aliquota * 0.32) + aliquota1;
+                } else if (rb12 < 720000) {
+                aliquota = ((rb12 * 0.135) - 17640)/rb12;
+                aliquota1 = ((rb12 * 0.095) - 13860)/rb12;
+                aliquota1 = aliquota1 * 0.335;
+                aliquota = aliquota - (aliquota * 0.325) + aliquota1;
+                } else if (rb12 < 1800000) {
+                aliquota = ((rb12 * 0.16) - 35640)/rb12;
+                aliquota1 = ((rb12 * 0.107) - 22500)/rb12;
+                aliquota1 = aliquota1 * 0.335;
+                aliquota = aliquota - (aliquota * 0.325) + aliquota1;
+                } else if (rb12 < 3600000){
+                aliquota = ((rb12 * 0.21) - 125640)/rb12;
+                aliquota1 = ((rb12 * 0.143) - 87300)/rb12;
+                aliquota1 = aliquota1 * 0.335;
+                aliquota = aliquota - (aliquota * 0.335) + aliquota1;
+                } else if (rb12 < 4800000){
+                aliquota = ((rb12 * 0.33) - 648000)/rb12;
+                aliquota1 = ((rb12 * 0.19) - 378000)/rb12;
+                } else {
+                JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional");
+                }
+        } else if (anexo == 7){
+                if (rb12 < 180000){
+                aliquota = 0.0535;
+                aliquota1 = 0.04 * 0.34;
+                } else if (rb12 < 360000){
+                aliquota = ((rb12 * 0.112) - 9360)/rb12;
+                aliquota1 = ((rb12 * 0.073) - 5940)/rb12;
+                aliquota1 = aliquota1 * 0.34;
+                aliquota = aliquota - (aliquota * 0.32) + aliquota1;
+                } else if (rb12 < 720000) {
+                aliquota = ((rb12 * 0.135) - 17640)/rb12;
+                aliquota1 = ((rb12 * 0.095) - 13860)/rb12;
+                aliquota1 = aliquota1 * 0.335;
+                aliquota = aliquota - (aliquota * 0.325) + aliquota1;
+                } else if (rb12 < 1800000) {
+                aliquota = ((rb12 * 0.16) - 35640)/rb12;
+                aliquota1 = ((rb12 * 0.107) - 22500)/rb12;
+                aliquota1 = aliquota1 * 0.335;
+                aliquota = aliquota - (aliquota * 0.325) + aliquota1;
+                } else if (rb12 < 3600000){
+                aliquota = ((rb12 * 0.21) - 125640)/rb12;
+                aliquota1 = ((rb12 * 0.143) - 87300)/rb12;
+                aliquota1 = aliquota1 * 0.335;
+                aliquota = aliquota - (aliquota * 0.335) + aliquota1;
+                } else if (rb12 < 4800000){
+                aliquota = ((rb12 * 0.33) - 648000)/rb12;
+                aliquota1 = ((rb12 * 0.19) - 378000)/rb12;
+                } else {
+                JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional");
+                }
+        }
+    return aliquota;    
     }
 
     public Double calculaRet(double valor2){
@@ -268,7 +329,53 @@ public  class View extends javax.swing.JFrame {
                 aliqret = 0;
                 JOptionPane.showMessageDialog(null,"O valor da retenção de ISS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ISS na repartição de tributos é zerada");
                 }
-       }
+       } else if (anexo == 6){
+            if (rb12 < 180000){
+                //valor3 = valor2 * 0.665;
+                valor3 = valor2 - (0.34 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 360000){
+                valor3 = valor2 - (0.34 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 720000) {
+                valor3 = valor2 - (0.335 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 1800000) {
+                valor3 = valor2 - (0.335 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 3600000){
+                valor3 = valor2 - (0.335 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 4800000){
+                valor3 = valor2;
+                aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ISS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ISS na repartição de tributos é zerada");
+                } else {
+                JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional");
+                }
+       } else if (anexo == 7) {
+            if (rb12 < 180000){
+                valor3 = valor2 - (0.34 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 360000) {
+                valor3 = valor2 - (0.34 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 720000) {
+                valor3 = valor2 - (0.335 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 1800000) {
+                valor3 = valor2 - (0.335 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 3600000) {
+                valor3 = valor2 - (0.335 * aliquota1);
+                aliqret = 100 * aliquota1;
+                } else if (rb12 < 4800000) {
+                valor3 = valor2;
+                aliqret = 0;
+                JOptionPane.showMessageDialog(null,"O valor da retenção de ISS é zerado, pois na 6a faixa (3.600.000,00 à 4.800.000,00) a alíquota do ISS na repartição de tributos é zerada");
+                } else {
+                JOptionPane.showMessageDialog(null, "Valor Maior que o Limite do Simples Nacional");
+                }}
       return valor3;
     }
 
@@ -287,8 +394,13 @@ public  class View extends javax.swing.JFrame {
         if (aliquota != 0){
             if(rb12 != 0){
         if (valor1 + valor2 < 4800000){
+        
+        if (anexo == 6 || anexo == 7){
+        txt5.setText(String.valueOf(format(valor1 * aliquota + ((calculaRet(valor2) * aliquota) - valor2 * aliquota1))));    
+        txt6.setText(String.valueOf(format(valor2 * aliquota1)));
+        } else {
         txt5.setText(String.valueOf(format(valor1 * aliquota + calculaRet(valor2) * aliquota)));
-        txt6.setText(String.valueOf(format(valor2 * aliquota - valor3 * aliquota)));}
+        txt6.setText(String.valueOf(format(valor2 * aliquota - valor3 * aliquota)));}}
         else {
             JOptionPane.showMessageDialog(null,"Valor Maior que o Limite do Simples Nacional");
             txt5.setText("0,00");
@@ -569,7 +681,7 @@ public  class View extends javax.swing.JFrame {
             }
         });
 
-        cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Anexo I", "Anexo II", "Anexo III", "Anexo IV", "Anexo V" }));
+        cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Anexo I", "Anexo II", "Anexo III", "Anexo IV", "Anexo V", "Transporte", "Comunicação" }));
         cb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb1ActionPerformed(evt);
@@ -586,6 +698,7 @@ public  class View extends javax.swing.JFrame {
             }
         });
 
+        txt5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txt5.setText("0,00");
         txt5.setEnabled(false);
         txt5.addActionListener(new java.awt.event.ActionListener() {
@@ -770,7 +883,7 @@ public  class View extends javax.swing.JFrame {
     }//GEN-LAST:event_txt1ActionPerformed
 
     private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
-        try{
+       try{
         rb12 =  Double.parseDouble(txt1.getText().toString().replace(".","").replace(",","."));
         }
         catch (Exception E){
@@ -785,11 +898,23 @@ public  class View extends javax.swing.JFrame {
         lbl3.setText("Valor do ICMS Retido:");
         lbl4.setText("Alíquota do ICMS:");
         }
-        if (anexo >= 3) {
+        if (anexo == 3 || anexo == 4 || anexo == 5) {
         lbl1.setText("Sem retenção de ISS:");
         lbl2.setText("Com retenção de ISS:");
         lbl3.setText("Valor do ISS Retido:");
         lbl4.setText("Alíquota do ISS");
+        } 
+        if (anexo == 6){
+        lbl1.setText("Sem retenção de ISS:");    
+        lbl2.setText("Com retenção de ISS:");    
+        lbl3.setText("Valor do ISS Retido:");    
+        lbl4.setText("Alíquota do ISS:");  
+        }
+        if (anexo == 7){
+        lbl1.setText("Sem retenção de ICMS:");
+        lbl2.setText("Com retenção de ICMS:");
+        lbl3.setText("Valor do ICMS Retido:");
+        lbl4.setText("Alíquota do ICMS:");
         }
         calculaImposto();
         txt7.setText(String.valueOf(format(aliqret)+ "%"));

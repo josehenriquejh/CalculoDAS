@@ -473,12 +473,14 @@
     <Component class="javax.swing.JComboBox" name="cb1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="7">
             <StringItem index="0" value="Anexo I"/>
             <StringItem index="1" value="Anexo II"/>
             <StringItem index="2" value="Anexo III"/>
             <StringItem index="3" value="Anexo IV"/>
             <StringItem index="4" value="Anexo V"/>
+            <StringItem index="5" value="Transporte"/>
+            <StringItem index="6" value="Comunica&#xe7;&#xe3;o"/>
           </StringArray>
         </Property>
       </Properties>
@@ -511,6 +513,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="0,00"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
