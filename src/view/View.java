@@ -9,9 +9,9 @@ import view.View2;
 
 public  class View extends javax.swing.JFrame {
     static double rb12;
-    static int anexo;
+    public static int anexo;
 
-
+    control.controler controler = new control.controler();
 
     double aliquota = 0;
     double aliquota1 = 0;
@@ -70,7 +70,7 @@ public  class View extends javax.swing.JFrame {
 
 
 
-     public Double calculaAliquota(double rb12){
+/*     public Double calculaAliquota(double rb12){
     if (anexo == 1){
                 if (rb12 < 180000){
                 aliquota = 0.04;
@@ -378,7 +378,7 @@ public  class View extends javax.swing.JFrame {
                 }}
       return valor3;
     }
-
+*/
     public void calculaImposto (){
     try{
             valor1 = Double.parseDouble(txt3.getText().toString().replace(".","").replace(",","."));
@@ -391,16 +391,23 @@ public  class View extends javax.swing.JFrame {
            }
          catch (Exception E){
            }
+        
         if (aliquota != 0){
             if(rb12 != 0){
         if (valor1 + valor2 < 4800000){
         
         if (anexo == 6 || anexo == 7){
-        txt5.setText(String.valueOf(format(valor1 * aliquota + ((calculaRet(valor2) * aliquota) - valor2 * aliquota1))));    
-        txt6.setText(String.valueOf(format(valor2 * aliquota1)));
+        txt5.setText(String.valueOf(format((valor1 * aliquota) + ((controler.calculaRet(valor2, rb12, anexo) * aliquota) - (valor2 * controler.aliquota1))))); 
+            System.out.println("aliquota = "+aliquota);
+            System.out.println("aliqret = " + (controler.calculaRet(valor2, rb12, anexo)));
+            System.out.println("v1 = "+(valor1 * aliquota));
+            System.out.println("v2 = "+(controler.calculaRet(valor2, rb12, anexo) * aliquota));
+            System.out.println("v3 = "+(valor2 * aliquota1));
+        txt6.setText(String.valueOf(format(valor2 * controler.aliquota1)));
         } else {
-        txt5.setText(String.valueOf(format(valor1 * aliquota + calculaRet(valor2) * aliquota)));
-        txt6.setText(String.valueOf(format(valor2 * aliquota - valor3 * aliquota)));}}
+        txt5.setText(String.valueOf(format(valor1 * aliquota + controler.calculaRet(valor2, rb12, anexo) * aliquota)));
+        txt6.setText(String.valueOf(format(valor2 * aliquota - controler.valor3 * aliquota)));}}
+        
         else {
             JOptionPane.showMessageDialog(null,"Valor Maior que o Limite do Simples Nacional");
             txt5.setText("0,00");
@@ -732,17 +739,17 @@ public  class View extends javax.swing.JFrame {
         lbl8.setText("Valores na Competência:");
 
         btnsair.setText("Sair");
-        btnsair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsairActionPerformed(evt);
-            }
-        });
         btnsair.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 btnsairFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 btnsairFocusLost(evt);
+            }
+        });
+        btnsair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsairActionPerformed(evt);
             }
         });
 
@@ -867,13 +874,13 @@ public  class View extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         try{
-            rb12 =  Double.parseDouble(txt1.getText().toString().replace(".","").replace(",","."));
+            rb12 =  Double.parseDouble(txt1.getText().replace(".","").replace(",","."));
         }
         catch (Exception E){
         }
 
         anexo = cb1.getSelectedIndex() + 1;
-        calculaAliquota(rb12);
+        aliquota = controler.calculaAliquota(rb12, anexo);
         txt1.setText(String.valueOf(format(rb12)));
         txt2.setText(String.valueOf(format(aliquota * 100) + "%"));
 
@@ -889,7 +896,7 @@ public  class View extends javax.swing.JFrame {
         catch (Exception E){
         }
         anexo = cb1.getSelectedIndex() + 1;
-        calculaAliquota(rb12);
+        aliquota = controler.calculaAliquota(rb12, anexo);
         txt2.setText(String.valueOf(format(aliquota * 100) + "%"));
 
         if (anexo <= 2){
@@ -917,7 +924,7 @@ public  class View extends javax.swing.JFrame {
         lbl4.setText("Alíquota do ICMS:");
         }
         calculaImposto();
-        txt7.setText(String.valueOf(format(aliqret)+ "%"));
+        txt7.setText(String.valueOf(format(controler.aliqret)+ "%"));
     }//GEN-LAST:event_cb1ActionPerformed
     private void txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt3ActionPerformed
 
@@ -929,10 +936,10 @@ public  class View extends javax.swing.JFrame {
         catch (Exception E){
         }
         anexo = cb1.getSelectedIndex() + 1;
-        calculaAliquota(rb12);
+        controler.calculaAliquota(rb12, anexo);
         txt2.setText(String.valueOf(format(aliquota * 100) + "%"));
         calculaImposto();
-        txt7.setText(String.valueOf(format(aliqret)+ "%"));
+        txt7.setText(String.valueOf(format(controler.aliqret)+ "%"));
 
 
     }//GEN-LAST:event_btn2ActionPerformed
@@ -941,7 +948,7 @@ public  class View extends javax.swing.JFrame {
     }//GEN-LAST:event_txt5ActionPerformed
 
     private void btnsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsairActionPerformed
-   System.exit(0);
+        System.exit(0);
 
     }//GEN-LAST:event_btnsairActionPerformed
 

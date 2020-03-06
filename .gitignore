@@ -1,1 +1,4 @@
 /build/
+/nbproject/private/
+/CalculoDAS/nbproject/private/
+/dist/

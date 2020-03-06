@@ -377,10 +377,10 @@ public class View3 extends javax.swing.JFrame {
 
     private void cb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb2ActionPerformed
         View.anexo = cb2.getSelectedIndex() + 1; 
-        View.calculaAliquota(View.rb12);
+        //View.calculaAliquota(View.rb12);
         txt5.setText(String.valueOf(View.format(View.aliquota * 100) + "%"));
         aliq2 = View.aliquota;
-        ret2 = (((View.calculaRet(100))/100));
+        //ret2 = (((View.calculaRet(100))/100));
         aliqret2 = View.aliqret;
         txt10.setText(String.valueOf(View.format(View.rb12)));
         
@@ -413,10 +413,10 @@ public class View3 extends javax.swing.JFrame {
 
     private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
         View.anexo = cb1.getSelectedIndex() + 1; 
-        View.calculaAliquota(View.rb12);
+        //View.calculaAliquota(View.rb12);
         txt1.setText(String.valueOf(View.format(View.aliquota * 100) + "%"));
         aliq1 = View.aliquota;
-        ret1 = (((View.calculaRet(100))/100));
+        //ret1 = (((View.calculaRet(100))/100));
         aliqret1 = View.aliqret;
         txt10.setText(String.valueOf(View.format(View.rb12)));
         
