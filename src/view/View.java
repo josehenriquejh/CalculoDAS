@@ -398,11 +398,6 @@ public  class View extends javax.swing.JFrame {
         
         if (anexo == 6 || anexo == 7){
         txt5.setText(String.valueOf(format((valor1 * aliquota) + ((controler.calculaRet(valor2, rb12, anexo) * aliquota) - (valor2 * controler.aliquota1))))); 
-            System.out.println("aliquota = "+aliquota);
-            System.out.println("aliqret = " + (controler.calculaRet(valor2, rb12, anexo)));
-            System.out.println("v1 = "+(valor1 * aliquota));
-            System.out.println("v2 = "+(controler.calculaRet(valor2, rb12, anexo) * aliquota));
-            System.out.println("v3 = "+(valor2 * aliquota1));
         txt6.setText(String.valueOf(format(valor2 * controler.aliquota1)));
         } else {
         txt5.setText(String.valueOf(format(valor1 * aliquota + controler.calculaRet(valor2, rb12, anexo) * aliquota)));
